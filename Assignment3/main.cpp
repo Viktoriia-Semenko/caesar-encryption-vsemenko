@@ -27,17 +27,38 @@ char* encrypt(char* raw_text, int key){
 }
 
 char* decrypt(char* encrypted_text, int key){
-    return nullptr;
+    size_t text_length = strlen(encrypted_text);
+    char* decrypted_text = (char*)malloc((text_length + 1) * sizeof(char));
+
+    for (int i = 0; i < text_length; i++) {
+        char letter = encrypted_text[i];
+
+        if ('A' <= letter && letter <= 'Z') { // 65 - 'A', 90 - 'Z' in ASCII
+            decrypted_text[i] = (letter - 'A' - key + 26) % 26 + 'A';
+        }
+        else if ('a' <= letter && letter <= 'z') { // 97 - 'a', 122 - 'z'
+            decrypted_text[i] = (letter - 'a' - key + 26) % 26 + 'a';
+        }
+        else {
+            decrypted_text[i] = letter;
+        }
+    }
+    decrypted_text[text_length] = '\0';
+
+    return decrypted_text;
 }
 
 int main() {
-    char raw_text[] = "Roses are red, violets are blue";
-    int key = 26;
+    char raw_text[] = "ZZRoses are red, violets are blue";
+    int key = 1;
 
     char* encrypted_text = encrypt(raw_text, key);
+    char* decrypted_text = decrypt(encrypted_text, key);
     cout << "Encrypted text: " << encrypted_text << endl;
+    cout << "Decrypted text: " << decrypted_text << endl;
 
     free(encrypted_text);
+    free(decrypted_text);
 
     return 0;
 
