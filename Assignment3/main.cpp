@@ -1,19 +1,22 @@
 #include <iostream>
-#include <cstring>
 #include <dlfcn.h>
 
 using namespace std;
 
 int main() {
-    void* handle = dlopen("../caesar.so", RTLD_LAZY);
+    void* handle = dlopen("../libcaesar.so", RTLD_LAZY);
     if (!handle) {
         cerr << "Lib not found" << dlerror() << endl;
         return -1;
     }
 
-    typedef int(*function_ptr)(int, int);
-    function_ptr caesar_functions = (function_ptr)dlsym(handle, "caesar");
-    if (caesar_functions == nullptr) {
+    typedef char* (*encrypt_func)(char*, int);
+    typedef char* (*decrypt_func)(char*, int);
+
+    encrypt_func encrypt = (encrypt_func)dlsym(handle, "encrypt");
+    decrypt_func decrypt = (decrypt_func)dlsym(handle, "decrypt");
+
+    if (decrypt == nullptr || encrypt == nullptr) {
         cerr << "Proc not found" << dlerror() << endl;
         dlclose(handle);
         return -1;
