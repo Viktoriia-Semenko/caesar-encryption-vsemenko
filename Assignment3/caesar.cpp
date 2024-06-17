@@ -1,11 +1,10 @@
 #include <iostream>
+#include "caesar.h"
 #include <cstring>
 
 using namespace std;
-extern "C" {
-__attribute__((visibility("default")))
 
-char *encrypt(char *raw_text, int key) {
+char* encrypt(char* raw_text, int key) {
     size_t text_length = strlen(raw_text);
     char *encrypted_text = (char *) malloc((text_length + 1) * sizeof(char));
 
@@ -25,7 +24,7 @@ char *encrypt(char *raw_text, int key) {
     return encrypted_text;
 }
 
-char *decrypt(char *encrypted_text, int key) {
+char* decrypt(char* encrypted_text, int key) {
     size_t text_length = strlen(encrypted_text);
     char *decrypted_text = (char *) malloc((text_length + 1) * sizeof(char));
 
@@ -43,5 +42,4 @@ char *decrypt(char *encrypted_text, int key) {
     decrypted_text[text_length] = '\0';
 
     return decrypted_text;
-}
 }
