@@ -13,13 +13,13 @@ In this task you need to define the user command line interface of the executabl
 
 ## Control questions
 1. What is a low-level language?
-2. Key characteristics of procedural, structured and imperative languages.
-3. What is a dynamic library?
-4. What is a static library?
-5. What is a compiler?
-6. What is a linker?
-7. Why do we need `extern "C"` construct in the code?
-8. What is a function pointer?
+3. Key characteristics of procedural, structured and imperative languages.
+4. What is a dynamic library?
+5. What is a static library?
+6. What is a compiler?
+7. What is a linker?
+8. Why do we need `extern "C"` construct in the code?
+9. What is a function pointer?
 
 ## Test plan
-[Test plan]()
+[Test plan](https://github.com/Viktoriia-Semenko/caesar-encryption-vsemenko/blob/main/test-plan.md)
