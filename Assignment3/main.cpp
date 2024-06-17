@@ -4,7 +4,7 @@
 using namespace std;
 
 int main() {
-    void* handle = dlopen("../libcaesar.so", RTLD_LAZY);
+    void* handle = dlopen("../libcaesar.dylib", RTLD_LAZY);
     if (!handle) {
         cerr << "Lib not found" << dlerror() << endl;
         return -1;
@@ -32,8 +32,6 @@ int main() {
     cout << "Decrypted text: " << decrypted_text << endl;
 
     dlclose(handle);
-    free(encrypted_text);
-    free(decrypted_text);
 
     return 0;
 
