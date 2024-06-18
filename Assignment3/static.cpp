@@ -13,5 +13,8 @@ int main(){
     cout << "Encrypted text: " << encrypted_text << endl;
     cout << "Decrypted text: " << decrypted_text << endl;
 
+    free(encrypted_text);
+    free(decrypted_text);
+
     return 0;
 }
