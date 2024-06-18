@@ -4,10 +4,11 @@
    `g++ -c caesar.cpp -o caesar.o`
 2. Linking </br>
    `g++ -o main main.o` </br>
-   `g++ -shared -o libcaesar.dylib caesar.o`
+   `g++ -shared -o libcaesar.so caesar.o`
 3. Checking </br>
-   `nm libcaesar.dylib`
+   `nm libcaesar.so`
 4. Execution
-   - <img width="822" alt="Знімок екрана 2024-06-17 о 20 43 37" src="https://github.com/Viktoriia-Semenko/caesar-encryption-vsemenko/assets/150340301/2206c793-8a00-487c-a381-892ae38e0a43">
-5. File contents
-   - <img width="341" alt="Знімок екрана 2024-06-17 о 20 43 02" src="https://github.com/Viktoriia-Semenko/caesar-encryption-vsemenko/assets/150340301/10537f58-ef8d-4170-ae43-56ad31e9fd2a">
+   - <img width="614" alt="Знімок екрана 2024-06-18 о 17 44 47" src="https://github.com/Viktoriia-Semenko/caesar-encryption-vsemenko/assets/150340301/13bec3f4-f3c5-4399-a5c0-beea2224d082">
+5. File contents (with static library)
+   - <img width="243" alt="Знімок екрана 2024-06-18 о 17 46 44" src="https://github.com/Viktoriia-Semenko/caesar-encryption-vsemenko/assets/150340301/c206c68a-d331-477e-8319-b5f3b2e6997b">
+
